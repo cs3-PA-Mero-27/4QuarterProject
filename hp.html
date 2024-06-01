@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Image Example</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: url('gal.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        p {
+            font-size: 1.5em;
+            margin: 10px 0 0;
+        }
+        .butt2 {
+            float: left;
+            position: absolute;
+            left: 10%;
+            right: 60%;
+            bottom: 20%;
+            background-color: #3D5A9B;
+            border: none;
+            color: #9dc2ec;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            border-radius: 10px;
+            width: 10%;
+            font-family: 'Londrina Solid';
+            letter-spacing: 1px;
+        }
+        .butt1 {
+            float: left;
+            position: absolute;
+            left: 10%;
+            right: 60%;
+            bottom: 10%;
+            background-color: #3D5A9B;
+            border: none;
+            color: #9dc2ec;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            border-radius: 10px;
+            width: 10%;
+            font-family: 'Londrina Solid';
+            letter-spacing: 1px;
+        }
+        .resources-container {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: none;
+        }
+        .resources-container.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <a href="sing.html">
+        <button class="butt2"> LOG IN</button>
+    </a>
+    <a href="3pic.html">
+        <button class="butt1"> START </button>
+    </a>
+    <div class="resources-container" id="resourcesContainer">
+        <h2>Additional Resources</h2>
+        <ul>
+            <li>FuseSchool - Global Education </li>
+            <li>interestingengineer.com</li>
+            <li>giphy</li>
+        </ul>
+    </div>
+    <script>
+        function handleScroll() {
+            var lastScrollTop = 0;
+            window.addEventListener("scroll", function() {
+                var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                if (currentScroll > lastScrollTop) {
+                    document.getElementById('resourcesContainer').classList.remove('active');
+                } else {
+                    document.getElementById('resourcesContainer').classList.add('active');
+                }
+                lastScrollTop = currentScroll;
+            });
+        }
+        window.onload = function() {
+            handleScroll();
+        };
+    </script>
+</body>
+</html>

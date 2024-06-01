@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Environmental Science</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            position: relative;
+        }
+        .header-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .section {
+            margin: 100px 0;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s, transform 0.5s;
+            position: relative;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s;
+        }
+        .section:hover img {
+            transform: scale(1.05);
+        }
+        .section h2 {
+            font-size: 2.5em;
+            margin: 20px auto 10px; 
+            color: #2e8540;
+        }
+        .section p {
+            font-size: 1.2em;
+            margin: 10px auto; 
+            max-width: 600px; 
+            text-align: justify; 
+        }
+        .contact-container {
+            position: relative;
+            margin: auto;
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .show-container {
+            opacity: 1;
+        }
+
+        .leaf {
+            position: absolute;
+            width: 80px;
+            filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+        }
+        .leaf1 {
+            top: 15%;
+            left: 5%; 
+            transform: rotate(20deg);
+        }
+        .leaf2 {
+            top: 25%; 
+            right: 5%;
+            transform: rotate(-40deg);
+        }
+        .leaf3 {
+            bottom: 0;
+            left: 10%;
+            transform: rotate(10deg);
+        }
+    </style>
+</head>
+<body>
+    <img src="top.jpg" alt="Header Image" class="header-image">
+    <div class="content">
+        <h1>About Us</h1>
+        <p>Welcome to our Environmental Science website, where we aim to increase awareness and understanding of the complex interactions between human activities and the environment. Through insightful articles, engaging multimedia content, and interactive experiences, we delve into the various ways in which human actions impact our planet, from the smallest ecosystems to the global climate system. Our mission is to empower individuals with knowledge and inspire positive change, fostering a deeper appreciation for the natural world and promoting sustainability for future generations.</p>
+       
+        <div class="section">
+            <h2>Positive Impacts</h2>
+            <img src="love.jpg" alt="Positive Impact Image">
+            <p>Learn about the various positive impacts of human activities on the environment. Discover how renewable energy sources, conservation efforts, and sustainable practices are shaping a greener future for generations to come.</p>
+        </div>
+       
+        <div class="section">
+            <h2>Negative Impacts</h2>
+            <img src="low.jpg" alt="Negative Impact Image">
+            <p>Gain insight into the detrimental effects of human activities on our environment. Explore topics such as pollution, deforestation, and climate change, and understand their far-reaching consequences for ecosystems and biodiversity.</p>
+        </div>
+       
+        <div class="section">
+            <h2>Join Our Community</h2>
+            <p>Connect with us to learn more and stay updated:</p>
+            <div class="contact-container" id="contact-container">
+                <p>Email: pmero@crc.pshs.edu.ph</p>
+                <p>Phone: 09304573599</p>
+                <p>Follow us on social media:</p>
+                <p>Facebook: Gwapako</p>
+                <p>Twitter: Princess Mero</p>
+                <p>Instagram: Lovemeplease:</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (sectionTop < windowHeight * 0.8) {
+                    section.classList.add('visible');
+                }
+            });
+
+            const contactContainer = document.getElementById('contact-container');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > 500) {
+                contactContainer.classList.add('show-container');
+            } else {
+                contactContainer.classList.remove('show-container');
+            }
+        });
+    </script>
+    <img src="lop.png" alt="Decorative Leaf" class="leaf leaf1">
+    <img src="lop.png" alt="Decorative Leaf" class="leaf leaf2">
+    <img src="lop.png" alt="Decorative Leaf" class="leaf leaf3">
+</body>
+</html>

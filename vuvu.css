@@ -1,0 +1,45 @@
+* Shared CSS styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Styles for the loader */
+#loaders {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #21315A;
+  z-index: -1;
+}
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#loader img {
+  width: 350px;
+  height: 330px;
+}
+
+.anime {
+  position: relative;
+  -webkit-animation-name: animate;
+  -webkit-animation-duration: 1s;
+  animation-name: animate;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes animate {
+  from { bottom: -100px; opacity: 0; }
+  to { bottom: 0px; opacity: 1; }
+}
+
+@keyframes animate {
+  from { bottom: -100px; opacity: 0; }
+  to { bottom: 0; opacity: 1; }
+}
+
